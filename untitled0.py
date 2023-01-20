@@ -122,49 +122,5 @@ print("Function Parameters ->", param)
 a, b, c = param[0], param[1], param[2]
 y_fit =a*x**2+b*x+c
 
-# It is to warn the condition normally doesn't warn raising an exception
-import warnings
-with warnings.catch_warnings(record=True):
-    plt.plot(x, y_fit, label="y=a*x**2+b*x+c",color="green")
-    plt.grid(True)
-    plt.plot(x, y, 'bo', label="Original Y",color="red")
-    plt.ylabel('Total Imports')
-    # To display the title
-    plt.title('GDP vs Total Imports')
-    # To display th label
-    plt.xlabel('Total GDP of a country')
-    plt.legend(loc='best', fancybox=True, shadow=True)
-    plt.show() 
-    
-    l=merged_data[(merged_data['Country_Name']=='BRA')]
-data3 = l.values
-x, y = data3[:, 2], data3[:, 3]
 
-# To define a function use def 
-def functn(x, a, b, c):
-    return a*x**2+b*x+c
-param, covar = curve_fit(functn, x, y)
-param, _ = curve_fit(functn, x, y)
-print("Function Covariance ->", covar)
-print("Function Parameters ->", param)
-
-a, b, c = param[0], param[1], param[2]
-y_fit =a*x**2+b*x+c
-
-import warnings
-
-with warnings.catch_warnings(record=True):
-    plt.plot(x, y_fit, label="y=a*x**2+b*x+c",color="green")
-    plt.grid(True)
-    plt.plot(x, y, 'bo', label="Original Y",color="red")
-    plt.ylabel('Total Imports')
-    # To display the title
-    plt.title('GDP vs Total Imports')
-    # To label the parts 
-    plt.xlabel('Total GDP of a country')
-    # To display the symbols on graph 
-    plt.legend(loc='best', fancybox=True, shadow=True)
-    # To show the plot
-    plt.show() 
-    
     
